@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Интересные cтатьи
+{% endblock %}
+
+
+    {% block body %}
+    <h1>Интересные статьи</h1>
+    <h2>Всего  постов {{ tasks.count }}</h2>
+    {% for el in tasks %}
+    <a href="{% url  'blog:detail' el.id %}"><h2>{{el.title}}</h2></a>
+    <h4>{{el.task|truncatechars:30}}</h4>
+    {{el.date}}
+    {% endfor %}
+    {% endblock %}

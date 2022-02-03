@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+{{id.title}}
+{% endblock %}
+{% block body  %}
+<h1>{{id.title}}</h1>
+<p class="mr-5">{{ id.task }}</p>
+    {{ id.date }}<br>
+    <a href="{% url 'blog:blog' %}"><button class="btn btn-warning">  Назад  </button></a>
+
+{% endblock %}

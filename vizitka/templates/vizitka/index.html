@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Главная
+{% endblock %}
+
+{% block body %}
+    <h1>Главная</h1>
+    {% for el in info %}
+    <h2>{{el.title}}</h2>
+    <p>{{el.text}}</p>
+    <img src="{{ el.photo.url }}">
+    {{el.date}}
+    {% if el.url %}
+    <a href="{{el.url}}">Ссылка</a>
+    {% else %}
+    {% endif %}
+    {% endfor %}
+
+{% endblock %}
+
